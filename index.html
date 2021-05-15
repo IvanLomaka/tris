@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/images/tic_tac_toe.png" sizes="16x16">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <div id="start-page" class="start-page">
+        <h1>Tic-Tac-Toe</h1>
+        <div class="row">
+            <div class="column">
+                <p>Play vs.</p>
+                <p>Symbol</p>
+                <p>&nbsp;</p>
+            </div>
+
+            <div class="column">
+                <button id="computer" class="bianco">NPC</button>
+                <button class="scelte bianco" id="x">X</button>
+                <button class="active" id="start">Start</button>
+            </div>
+
+            <div class="column">
+                <button id="friend" class="bianco">Friend</button>
+                <button class="scelte bianco" id="o">O</button>
+                <p>&nbsp;</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row2" id="board-page">
+        <h1>Tic-Tac-Toe</h1>
+        <div class="row">
+            <div class="board" id="board">
+                <div class="row">
+                    <div class="pulsanti zero" id="0"></div>
+                    <div class="pulsanti uno" id="1"></div>
+                    <div class="pulsanti due" id="2"></div>
+                </div>
+                <div class="row">
+                    <div class="pulsanti tre" id="3"></div>
+                    <div class="pulsanti quattro" id="4"></div>
+                    <div class="pulsanti cinque" id="5"></div>
+                </div>
+                <div class="row">
+                    <div class="pulsanti sei" id="6"></div>
+                    <div class="pulsanti sette" id="7"></div>
+                    <div class="pulsanti otto" id="8"></div>
+                </div>
+            </div>
+            <div class="stats">
+                <div>
+                    Time: <span id="time"></span>
+                </div>
+                <div>
+                    The wins of X: <span id="xwins"></span>
+                </div>
+                <div>
+                    The wins of O: <span id="owins"></span>
+                </div>
+                <div>
+                    Ties: <span id="ties"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button data-modal-target="#modal" style="display: none;">Open Modal</button>
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="title" id="risultati">n won!</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body" id="modal-body">
+           <button id="gioca-ancora">Play again with the same settings</button>
+           <button id="schermata-principale">Home</button>
+        </div>
+    </div>
+    <div id="overlay"></div>
+
+    <script src="game.js"></script>
+</body>
+</html>

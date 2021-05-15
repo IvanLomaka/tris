@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffd88f;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.hide {
+    display: none;
+}
+
+.bianco {
+    background-color: white;
+}
+
+.start-page {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.start-page h1 {
+    font-size: 70px;
+    padding: 10px;
+}
+
+h1 {
+    font-size: 60px;
+    padding: 10px;
+}
+
+.start-page p {
+    font-size: 30px;
+    padding: 15px;
+    margin: 5px;
+    width: 140px;
+}
+
+.start-page button {
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+    margin: 5px;
+    font-size: 30px;
+    transition: all ease-in-out 0.5s;
+    user-select: none;
+    outline: none;
+    width: 140px;
+}
+
+.scelte {
+    width: 50px;
+}
+
+.active {
+    background-color: #1cfc2b;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.board {
+    width: 450px;
+}
+
+.row2 {
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+.stats {
+    padding-left: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    height: 300px;
+}
+
+.stats div {
+    font-size: 25px;
+    padding: 30px;
+}
+
+.pulsanti {
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+    font-size: 120px;
+}
+
+.zero {
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+}
+
+.uno {
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    border-left: solid 2px black;
+}
+
+.due {
+    border-left: solid 2px black;
+    border-bottom: solid 2px black;
+}
+
+.tre {
+    border-top: solid 2px black;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+}
+
+.quattro {
+    border-top: solid 2px black;
+    border-right: solid 2px black;
+    border-bottom: solid 2px black;
+    border-left: solid 2px black;
+}
+
+.cinque {
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+    border-left: solid 2px black;
+}
+
+.sei {
+    border-top: solid 2px black;
+    border-right: solid 2px black;
+}
+
+.sette {
+    border-top: solid 2px black;
+    border-right: solid 2px black;
+    border-left: solid 2px black;
+}
+
+.otto {
+    border-top: solid 2px black;
+    border-left: solid 2px black;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black; 
+    box-shadow: 5px 7px 8px #4b4b4b;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: #ffc558;
+    width: 500px;
+    max-width: 80%;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header .title {
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 20px; 
+}
+
+.close-button {
+    font-size: 25px;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.modal-body button {
+    border-radius: 10px;
+    border: none;
+    padding: 15px;
+    margin: 5px;
+    font-size: 20px;
+    transition: all ease-in-out 0.5s;
+    user-select: none;
+    outline: none;
+    width: 350px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+@media screen and (max-width:630px) {
+    body {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+
+    .start-page h1 {
+        font-size: 35px;
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 30px;
+        padding: 5px;
+    }
+    
+    .start-page p {
+        font-size: 15px;
+        padding: 7.5px;
+        margin: 2.5px;
+        width: 70px;
+    }
+    
+    .start-page button {
+        border-radius: 5px;
+        border: none;
+        padding: 7.5px;
+        margin: 2.5px;
+        font-size: 15px;
+        transition: all ease-in-out 0.5s;
+        user-select: none;
+        outline: none;
+        width: 70px;
+    }
+
+    .bianco {
+        background-color: white;
+    }
+    
+    .scelte {
+        width: 25px;
+    }
+
+    .board {
+        width: 225px;
+    }
+
+    .stats {
+        padding-left: 25px;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        height: 150px;
+    }
+
+    .stats div {
+        font-size: 12.5px;
+        padding: 15px;
+    }
+    
+    .pulsanti {
+        cursor: pointer;
+        width: 75px;
+        height: 75px;
+        font-size: 60px;
+    }
+
+    .modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: 200ms ease-in-out;
+        border: 1px solid black; 
+        box-shadow: 5px 7px 8px #4b4b4b;
+        border-radius: 5px;
+        z-index: 10;
+        background-color: #ffc558;
+        width: 250px;
+        max-width: 80%;
+    }
+    
+    .modal.active {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    
+    .modal-header {
+        padding: 5px 7.5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .modal-header .title {
+        font-size: 12.5px;
+        font-weight: bold;
+        padding-left: 10px; 
+    }
+    
+    .close-button {
+        font-size: 12.5px;
+    }
+    
+    .modal-header .close-button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+    
+    .modal-body {
+        padding: 5px 7.5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .modal-body button {
+        border-radius: 10px;
+        border: none;
+        padding: 7.5px;
+        margin: 2.5px;
+        font-size: 15px;
+        transition: all ease-in-out 0.5s;
+        user-select: none;
+        outline: none;
+        width: 175px;
+        background-color: white;
+    }
+}
